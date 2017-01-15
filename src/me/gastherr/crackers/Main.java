@@ -2,7 +2,9 @@ package me.gastherr.crackers;
 
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -19,9 +21,11 @@ public class Main{
 			public void run() {
 				JFrame jf = new FrameBase(0.03);
 				Image img = null;
+				File f;
 				try {
-					img = ImageIO.read(Main.class.getResourceAsStream("/files/crackersIcon.png"));
-				} catch (IOException e) {
+					f = new File(getClass().getClassLoader().getResource("crackersIcon.png").toURI());
+					img = ImageIO.read(f);
+				} catch (IOException | URISyntaxException e) {
 					e.printStackTrace();
 				}
 				jf.setIconImage(img);

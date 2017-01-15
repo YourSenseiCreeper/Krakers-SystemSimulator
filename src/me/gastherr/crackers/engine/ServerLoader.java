@@ -2,6 +2,7 @@ package me.gastherr.crackers.engine;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
 import me.gastherr.crackers.utils.Assembler;
@@ -12,8 +13,8 @@ public class ServerLoader extends DataCore{
 	public ServerLoader(){
 		File[] listOfFiles = null;
 		try {
-			listOfFiles = Resource.getFiles("src/resource/servers");
-		} catch (IOException e) { e.printStackTrace(); }
+			listOfFiles = Resource.getFiles("servers");
+		} catch (IOException | URISyntaxException e) { e.printStackTrace(); }
 
 		Server s = null;
 		for (int i = 0; i < listOfFiles.length; i++) {
@@ -27,8 +28,8 @@ public class ServerLoader extends DataCore{
 	private Server loadOne(String name){
 		Scanner sc = null;
 		try {
-			sc = new Scanner(Resource.getFile("src/resource/"+name+".txt").getFile());
-		} catch (IOException e) {e.printStackTrace();}
+			sc = new Scanner(Resource.getFile(name+".txt"));
+		} catch (IOException | URISyntaxException e) {e.printStackTrace();}
 		//Mo¿e byæ problem ze œcie¿k¹ wzglêdn¹
 		Server s1 = new Server();
 		

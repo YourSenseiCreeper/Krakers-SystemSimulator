@@ -8,6 +8,7 @@ public class CmdDisconnect implements Command{
 
 	private Console con;
 	private DataCore dc;
+	private String desc = "Od³¹cza od serwera";
 	
 	public CmdDisconnect(Console con){
 		this.con = con;
@@ -42,7 +43,7 @@ public class CmdDisconnect implements Command{
 
 	@Override
 	public String getDesc() {
-		return "Od³¹za od serwera.";
+		return desc;
 	}
 
 

@@ -1,13 +1,14 @@
 package me.gastherr.crackers.commands;
+
 import java.util.HashMap;
 
 import me.gastherr.crackers.engine.Command;
 import me.gastherr.crackers.engine.Console;
-import me.gastherr.crackers.utils.Messages;
 
 public class CmdHelp implements Command{
 	
 	private Console con;
+	private String desc = "Lista dostêpnych komend";
 	
 	public CmdHelp(Console con) {
 		this.con = con;
@@ -22,7 +23,7 @@ public class CmdHelp implements Command{
 		
 		for(String s : cmds.keySet()){
 			
-			con.send(time+s+" - "+cmds.get(s).getDesc());
+			con.send(time+s+"\t\t"+cmds.get(s).getDesc());
 		}
 		con.setExecuting(true);
 		con.send(time+"---------------------------------------------");
@@ -31,7 +32,7 @@ public class CmdHelp implements Command{
 
 	@Override
 	public String getDesc() {
-		return Messages.getMessage("desc_help");
+		return desc;
 	}
 	
 	public String getHeader(String in){

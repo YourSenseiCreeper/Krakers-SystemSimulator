@@ -1,4 +1,0 @@
-welcome1: Crakers [Version $v]
-welcome2: (c) $y Cracking Corporation. Wszelkie prawa zastrzezone.
-welcome3: Wpisz: help aby zobaczyc dostepne komendy
-err_brak_sciezki: Nie ma takiej sciezki!
