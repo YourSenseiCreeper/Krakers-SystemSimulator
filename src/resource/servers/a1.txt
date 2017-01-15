@@ -1,0 +1,8 @@
+ip: 62.22.132.198
+os: Windows 8.1 Home Edition v. 0.237a
+freespace: 153210.32
+EXECUTE
+crd C:
+crd System/Program_Files/Videos/Games
+cpth C:.System
+crd sys32/fonts/data
