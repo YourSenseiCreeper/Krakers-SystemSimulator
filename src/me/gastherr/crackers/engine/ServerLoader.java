@@ -3,14 +3,17 @@ package me.gastherr.crackers.engine;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Scanner;
 
+import me.gastherr.crackers.Main;
 import me.gastherr.crackers.utils.Assembler;
 import me.gastherr.crackers.utils.Resource;
 
 public class ServerLoader extends DataCore{
 	
 	public ServerLoader(){
+		/**
 		File[] listOfFiles = null;
 		try {
 			listOfFiles = Resource.getFiles("crackersIcon.png", "servers");
@@ -24,6 +27,22 @@ public class ServerLoader extends DataCore{
 				super.getServers().put(s.getIP(), s);
 			}
 		}
+		*/
+		
+		final String path = "resource/server";
+
+		    final URL url = Main.class.getResource("/" + path);
+		    if (url != null) {
+		        try {
+		            final File apps = new File(url.toURI());
+		            for (File app : apps.listFiles()) {
+		                System.out.println(app);
+		            }
+		        } catch (URISyntaxException ex) {
+		            // never happens
+		        }
+		    } else System.out.println("To tylko null");
+		
 	}
 	
 	private Server loadOne(String name){
