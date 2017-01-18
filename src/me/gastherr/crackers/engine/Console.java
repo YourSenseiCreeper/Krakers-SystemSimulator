@@ -41,9 +41,8 @@ public class Console{
 		new Assembler();
 		new Messages();
 		
-		//ce = new CommandExecutor(this);
 		dc = new DataCore();
-		//new ServerLoader();
+		new ServerLoader();
 		cm = new CommandsManager(this);
 		
 		

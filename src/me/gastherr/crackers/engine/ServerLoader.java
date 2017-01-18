@@ -13,7 +13,8 @@ public class ServerLoader extends DataCore{
 	public ServerLoader(){
 		File[] listOfFiles = null;
 		try {
-			listOfFiles = Resource.getFiles("servers");
+			listOfFiles = Resource.getFiles("crackersIcon.png", "servers");
+			
 		} catch (IOException | URISyntaxException e) { e.printStackTrace(); }
 
 		Server s = null;

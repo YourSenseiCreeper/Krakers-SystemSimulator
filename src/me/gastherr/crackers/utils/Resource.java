@@ -3,6 +3,8 @@ package me.gastherr.crackers.utils;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Resource {
 	
@@ -24,9 +26,10 @@ public class Resource {
 	 * @throws IOException
 	 * @throws URISyntaxException
 	 */
-	public static File[] getFiles(String folder) throws IOException, URISyntaxException{
-		File f = new File(Resource.class.getClass().getClassLoader().getResource(folder).toURI());
-		return f.listFiles();
+	public static File[] getFiles(String filefolder, String foldername) throws IOException, URISyntaxException{
+		File f = getFile(filefolder);
+		Path p = Paths.get(f.getParentFile().toPath().toString(), foldername);
+		return new File(p.toString()).listFiles();
 	}
 
 }
